@@ -1,0 +1,24 @@
+.each-card-container {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  margin: 10px;
+}
+.image {
+  height: 150px;
+}
+.info-container {
+  width: 60vw;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: green;
+  width: 200px;
+}
+.button {
+  background-color: transparent;
+  color: white;
+  border-width: 0px;
+}

@@ -1,0 +1,11 @@
+.home-container {
+  padding: 20px;
+}
+.menu-buttons-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.dishes-list-container {
+  list-style-type: none;
+}
