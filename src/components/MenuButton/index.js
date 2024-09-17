@@ -8,9 +8,15 @@ const MenuButton = props => {
   }
   const colorstyle = isActive ? 'color' : ''
   return (
-    <button onClick={onClickButton} className={`menu-button ${colorstyle}`}>
-      {menuCategory}
-    </button>
+    <li>
+      <button
+        type='button'
+        onClick={onClickButton}
+        className={`menu-button ${colorstyle}`}
+      >
+        {menuCategory}
+      </button>
+    </li>
   )
 }
 export default MenuButton

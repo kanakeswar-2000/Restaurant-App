@@ -13,18 +13,18 @@ const Eachcard = props => {
     addonCat,
   } = details
   return (
-    <div className="each-card-container">
-      <div className="info-container">
+    <div className='each-card-container'>
+      <div className='info-container'>
         <h1>{dishName}</h1>
         <p>
           {dishCurrency} {dishPrice}
         </p>
         <p>{dishDescription}</p>
         {dishAvailability ? (
-          <div className="button-container">
-            <button className="button">-</button>
+          <div className='button-container'>
+            <button className='button'>-</button>
             <p> 0 </p>
-            <button className="button">+</button>
+            <button className='button'>+</button>
           </div>
         ) : (
           <p> Not available</p>
@@ -35,7 +35,7 @@ const Eachcard = props => {
         <p>{dishCalories} calories</p>
       </div>
       <div>
-        <img src={dishImage} className="image" />
+        <img src={dishImage} className='image' />
       </div>
     </div>
   )

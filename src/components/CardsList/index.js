@@ -48,25 +48,32 @@ class CardsList extends Component {
     }
   }
 
-  filteredData = () => {
+  renderCategoryDishes = () => {
+    
     const {tableMenusList, activeMenuCategoryId} = this.state
     if (tableMenusList.length === 0) {
-      return []
+      return <div></div>
+    } else {
+      const filtereditem = tableMenusList.find(
+        each_menu => each_menu.menuCategoryId === activeMenuCategoryId,
+      )
+       
+      return (
+        <div>
+           {
+            filtereditem.categoryDishes.map(eachitem=><Eachcard details={eachitem} key={eachitem.dishId}/>)
+           }
+        </div>
+      )
     }
-    const filtereditem = tableMenusList.filter(
-      each_menu => each_menu.menuCategoryId === activeMenuCategoryId,
-    )
-    return filtereditem
   }
-
   render() {
     const {tableMenusList, activeMenuCategoryId} = this.state
-    const activeMenu = this.filteredData()
 
     return (
-      <div className='home-container'>
+      <div className="home-container">
         <Header />
-        <div className='menu-buttons-container'>
+        <ul className="menu-buttons-container">
           {tableMenusList.map(eachitem => (
             <MenuButton
               details={eachitem}
@@ -75,11 +82,8 @@ class CardsList extends Component {
               isActive={activeMenuCategoryId === eachitem.menuCategoryId}
             />
           ))}
-        </div>
-        {activeMenu.length > 0 &&
-          activeMenu[0].categoryDishes.map(eachitem => (
-            <Eachcard details={eachitem} key={eachitem.dishId} />
-          ))}
+        </ul>
+        {this.renderCategoryDishes()}
       </div>
     )
   }
